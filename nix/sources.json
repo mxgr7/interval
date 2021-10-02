@@ -1,0 +1,14 @@
+{
+    "yahp": {
+        "branch": "main",
+        "description": "yet another Haskell prelude",
+        "homepage": null,
+        "owner": "mxgr7",
+        "repo": "yahp",
+        "rev": "ae83adf89ab999ab738fb74b591a87860edfb77b",
+        "sha256": "1pdnym344ihdh79za28aqfyqrx2s0wjcvry7spgvxhiqzrwr04ba",
+        "type": "tarball",
+        "url": "https://github.com/mxgr7/yahp/archive/ae83adf89ab999ab738fb74b591a87860edfb77b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

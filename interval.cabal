@@ -1,0 +1,108 @@
+cabal-version:      2.4
+name:               interval
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+synopsis: Haskell library for finite and infinite intervals of any ordered type
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+license: Apache-2.0
+
+-- A copyright notice.
+-- copyright:
+-- category:
+
+library
+
+    exposed-modules:
+        Interval
+        Interval.Tests
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    
+                        QuickCheck
+                      , base
+                      , containers
+                      , hspec
+                      , lens
+                      , yahp
+                    
+    ghc-options:
+     -Werror=partial-fields
+     -Werror=incomplete-record-updates
+     -Werror=incomplete-uni-patterns
+     -Werror=incomplete-patterns
+     -Werror=unused-top-binds -Werror=unused-local-binds -Werror=unused-pattern-binds
+     -Werror=unused-matches
+     -Werror=overflowed-literals
+     -Werror=overlapping-patterns
+     -Werror=missing-fields
+     -Werror=typed-holes
+     -Werror=empty-enumerations
+     -Werror=unrecognised-pragmas
+     -Werror=missing-methods
+     -Wall
+     -Wno-orphans
+     -Wno-missing-signatures
+     -Wno-unused-do-bind
+     -Wno-name-shadowing
+     -Wno-unticked-promoted-constructors
+     -Wcompat
+      -j +RTS -A128m -n2m -RTS
+
+    default-extensions:
+      ConstraintKinds          
+      DataKinds
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveTraversable
+      DeriveDataTypeable
+      FlexibleContexts
+      FlexibleInstances
+      RecordWildCards
+      NoImplicitPrelude
+      FunctionalDependencies
+      GADTs
+      GeneralizedNewtypeDeriving
+      KindSignatures
+      MultiParamTypeClasses
+      RankNTypes
+      ScopedTypeVariables
+      StandaloneDeriving
+      TupleSections
+      DefaultSignatures
+      TypeFamilies
+      TypeOperators
+      DerivingVia
+      OverloadedStrings
+      LambdaCase
+      TypeApplications
+      OverloadedLabels
+                    
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite intervals-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  ghc-options: -Wall -rtsopts -threaded
+    -j +RTS -A128m -n2m -RTS
+  hs-source-dirs:
+    test
+  build-depends:
+                      base
+                    , interval
+                    , yahp
+  default-language: Haskell2010
+           
+-- Local Variables:
+-- compile-command: "nix-shell --run 'cabal exec -- ghc-pkg list'"
+-- End:
